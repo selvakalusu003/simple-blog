@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<h2>All Posts</h2>
+
+{% for post in posts %}
+    <h3>
+        <a href="{% url 'post_detail' post.id %}">
+            {{ post.title }}
+        </a>
+    </h3>
+    <p>{{ post.content|truncatewords:20 }}</p>
+    <small>By {{ post.author }} | {{ post.created_date }}</small>
+    <hr>
+{% endfor %}
+
+<!-- Pagination -->
+<div>
+    {% if posts.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ posts.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+
+    {% if posts.has_next %}
+        <a href="?page={{ posts.next_page_number }}">Next</a>
+        <a href="?page={{ posts.paginator.num_pages }}">Last</a>
+    {% endif %}
+</div>
+
+{% endblock %}

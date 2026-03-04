@@ -44,7 +44,7 @@ https://github.com/yourusername/django-simple-blog
 
 ## 📂 Project Structure
 
-
+```
 django-simple-blog
 │
 ├── simple_blog
@@ -68,7 +68,7 @@ django-simple-blog
 │
 ├── requirements.txt
 └── README.md
-
+```
 ---
 
 ## ⚙️ Installation

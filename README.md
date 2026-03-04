@@ -69,7 +69,6 @@ django-simple-blog
 ├── requirements.txt
 └── README.md
 
-
 ---
 
 ## ⚙️ Installation
